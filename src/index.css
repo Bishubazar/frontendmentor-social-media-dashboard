@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+/* - Weights: 400, 700 */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ### Primary
+
+- Lime Green: hsl(163, 72%, 41%)
+- Bright Red: hsl(356, 69%, 56%)
+
+- Facebook: hsl(208, 92%, 53%)
+- Twitter: hsl(203, 89%, 53%)
+- Instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%)
+- YouTube: hsl(348, 97%, 39%)
+
+#### Dark Theme
+
+- Toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%)
+
+#### Light Theme
+
+- Toggle: hsl(230, 22%, 74%)
+
+### Neutral
+
+#### Dark Theme
+
+- Very Dark Blue (BG): hsl(230, 17%, 14%)
+- Very Dark Blue (Top BG Pattern): hsl(232, 19%, 15%)
+- Dark Desaturated Blue (Card BG): hsl(228, 28%, 20%)
+- Desaturated Blue (Text): hsl(228, 34%, 66%)
+- White (Text): hsl(0, 0%, 100%)
+
+#### Light Theme
+
+- White (BG): hsl(0, 0%, 100%)
+- Very Pale Blue (Top BG Pattern): hsl(225, 100%, 98%)
+- Light Grayish Blue (Card BG): hsl(227, 47%, 96%)
+- Dark Grayish Blue (Text): hsl(228, 12%, 44%)
+- Very Dark Blue (Text): hsl(230, 17%, 14%)
+ */
+
+@layer base {
+    :root {
+        --color-bkg: 0deg 0% 100%;
+        --color-pattern: 225deg 100% 98%;
+        --color-card: 227deg 47% 96%;
+        --color-content: 228deg 12% 44%;
+        --color-d-content: 230deg 17% 14%;
+        --primary-red: 356deg 69% 56%;
+        --instagram-yellow: 37deg 97% 70%;
+        --instagram-pink: 329deg 70% 58%;
+        --dark-blue: 210 78% 56%;
+        --dark-green: 146deg 68% 55%;
+    }
+    [class="dark"] {
+        --color-bkg: 230deg 17% 14%;
+        --color-pattern: 232deg 19% 15%;
+        --color-card: 228deg 28% 20%;
+        --color-content: 228deg 34% 66%;
+        --color-d-content: 0deg 0% 100%;
+        --primary-red: 356deg 69% 56%;
+        --instagram-yellow: 37deg 97% 70%;
+        --instagram-pink: 329deg 70% 58%;
+        --dark-blue: 210 78% 56%;
+        --dark-green: 146deg 68% 55%;
+    }
+}
+
+@layer components {
+    body {
+        font-family: "Inter", sans-serif;
+        @apply text-sm font-normal;
+    }
+
+    h1 {
+        @apply text-d-content;
+    }
+
+    .card {
+        @apply bg-card;
+    }
+
+    .title {
+        @apply font-bold text-content;
+    }
+
+    .label {
+        @apply text-xs font-bold;
+    }
+    .custom-gradient {
+        @apply peer-check:from-[hsl(210, 78%, 56%)] peer-check:to-[hsl(146, 68%, 55%)];
+    }
+}
